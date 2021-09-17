@@ -43,20 +43,20 @@ This function should only modify configuration layer settings."
      emacs-lisp
      git
      helm
-     (lsp :variables lsp-rust-server 'rust-analyzer)
+     lsp
      markdown
      multiple-cursors
      org
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom)
-     ;; spell-checking
-     ;; syntax-checking
-     ;; version-control
+     treemacs
+     syntax-checking
+     version-control
+     ;; Language layers
      (c-c++ :variables c-c++-backend 'lsp-ccls)
      (rust :variables rust-backend 'lsp)
-     treemacs)
-
+     )
 
    ;; List of additional packages that will be installed without being wrapped
    ;; in a layer (generally the packages are installed only and should still be
