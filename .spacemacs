@@ -39,8 +39,7 @@ This function should only modify configuration layer settings."
      ;; `M-m f e R' (Emacs style) to install them.
      ;; ----------------------------------------------------------------
      auto-completion
-     better-defaults
-     emacs-lisp
+     ;; better-defaults
      git
      helm
      lsp
@@ -50,12 +49,14 @@ This function should only modify configuration layer settings."
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom)
+     ;; syntax-checking
+     ;; version-control
      treemacs
-     syntax-checking
-     version-control
      ;; Language layers
+     emacs-lisp
      (c-c++ :variables c-c++-backend 'lsp-ccls)
      (rust :variables rust-backend 'lsp)
+     cmake
      ;; To make spacemacs fancy
      themes-megapack
      )
@@ -545,7 +546,9 @@ dump.")
 This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
-before packages are loaded.")
+before packages are loaded."
+  (setq org-todo-keywords '((sequence "TODO" "INVESTIGATE" "PROGRESS" "BLOCKED" "REVIEW" "|" "DONE" "DELEGATED" "INVALID")))
+  )
 
 
 ;; Do not write anything past this comment. This is where Emacs will
