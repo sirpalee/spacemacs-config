@@ -55,7 +55,7 @@ This function should only modify configuration layer settings."
      ;; Language layers
      emacs-lisp
      (c-c++ :variables c-c++-backend 'lsp-ccls)
-     (rust :variables rust-backend 'lsp)
+     (rust :variables lsp-rust-server 'rust-analyzer)
      cmake
      ;; To make spacemacs fancy
      themes-megapack
