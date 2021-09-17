@@ -71,7 +71,7 @@ This function should only modify configuration layer settings."
    ;; Also include the dependencies as they will not be resolved automatically.
    dotspacemacs-additional-packages
    '(
-     rustic
+     (rustic :mode "\\.rs-totally-not-a-hack\\'")
      )
 
    ;; A list of packages that cannot be updated.
@@ -551,6 +551,10 @@ configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
   (setq org-todo-keywords '((sequence "TODO" "INVESTIGATE" "PROGRESS" "BLOCKED" "REVIEW" "|" "DONE" "DELEGATED" "INVALID")))
+  (spacemacs/set-leader-keys-for-major-mode 'rust-mode
+    "cl" 'rustic-cargo-clippy
+    "cx" 'rustic-cargo-run
+    )
   )
 
 
