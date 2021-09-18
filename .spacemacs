@@ -71,7 +71,7 @@ This function should only modify configuration layer settings."
    ;; Also include the dependencies as they will not be resolved automatically.
    dotspacemacs-additional-packages
    '(
-     (rustic :mode "\\.rs-totally-not-a-hack\\'")
+     (rustic :rustic-lsp-server 'rust-analyzer)
      )
 
    ;; A list of packages that cannot be updated.
@@ -551,9 +551,33 @@ configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
   (setq org-todo-keywords '((sequence "TODO" "INVESTIGATE" "PROGRESS" "BLOCKED" "REVIEW" "|" "DONE" "DELEGATED" "INVALID")))
-  (spacemacs/set-leader-keys-for-major-mode 'rust-mode
+  ;; Rustic seems to be updated more often and have better features? Things like non-nightly clippy also works
+  ;; with rustic.
+  ;; Replicating rust-mode major mode keys using rustic mode instead.
+  ;; Relying on rust-mode whenever rustic-mode doesn't have a command for a given action.
+  (spacemacs/set-leader-keys-for-major-mode 'rustic-mode
+    "cc" 'rustic-cargo-build
+    "cC" 'rustic-cargo-clean
+    "cd" 'rustic-cargo-build-doc
+    "cD" 'rustic-cargo-doc
+    "ce" 'rustic-cargo-bench
+    ;; Do we have something from rustic for this?
+    "cE" 'cargo-process-run-example
+    "ci" 'rustic-cargo-init
     "cl" 'rustic-cargo-clippy
+    "cn" 'rustic-cargo-new
+    "co" 'rustic-cargo-outdated
+    "cr" 'rustic-cargo-rm
+    ;; Rustic has upgrade and upgrade crates, how are those related?
+    "cu" 'cargo-process-update
+    "cU" 'spacemacs/cargo-process-upgrade
+    "cv" 'rustic-cargo-check
     "cx" 'rustic-cargo-run
+    "cX" 'rustic-cargo-bin
+    ;; Can I replicate these using rustic?
+    "ta" 'cargo-process-test
+    "tt" 'cargo-process-current-test
+    "tb" 'cargo-process-current-file-tests
     )
   )
 
