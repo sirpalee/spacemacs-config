@@ -563,6 +563,7 @@ before packages are loaded."
     "ce" 'rustic-cargo-bench
     ;; Do we have something from rustic for this?
     "cE" 'cargo-process-run-example
+    "cf" 'rustic-cargo-fmt
     "ci" 'rustic-cargo-init
     "cl" 'rustic-cargo-clippy
     "cn" 'rustic-cargo-new
