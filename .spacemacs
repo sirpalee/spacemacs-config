@@ -56,7 +56,7 @@ This function should only modify configuration layer settings."
      emacs-lisp
      markdown
      (rust :variables lsp-rust-server 'rust-analyzer)
-     (haskell :variables haskell-completion-backend 'dante)
+     (haskell :variables haskell-completion-backend 'lsp)
      python
      cmake
      ;; To make spacemacs fancy
