@@ -55,7 +55,7 @@ This function should only modify configuration layer settings."
      (c-c++ :variables c-c++-backend 'lsp-ccls)
      cmake
      emacs-lisp
-     (haskell :variables haskell-completion-backend 'lsp)
+     haskell
      markdown
      python
      (rust :variables lsp-rust-server 'rust-analyzer)
@@ -584,6 +584,7 @@ before packages are loaded."
     "tt" 'cargo-process-current-test
     "tb" 'cargo-process-current-file-tests
     )
+  (setq create-lockfiles nil)
   )
 
 
