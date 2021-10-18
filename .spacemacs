@@ -55,7 +55,6 @@ This function should only modify configuration layer settings."
      (c-c++ :variables c-c++-backend 'lsp-ccls)
      cmake
      emacs-lisp
-     haskell
      markdown
      python
      (rust :variables lsp-rust-server 'rust-analyzer)
